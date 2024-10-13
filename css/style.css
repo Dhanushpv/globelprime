@@ -244,7 +244,7 @@
 }
 
 .page-header {
-    background: linear-gradient(rgba(43, 57, 64, .5), rgba(43, 57, 64, .5)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(43, 57, 64, .5), rgba(43, 57, 64, .5)), url(../img/diversity-worker-photography.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -299,8 +299,8 @@
 
 .flip-card {
     background-color: transparent;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     perspective: 1000px;
   }
   
@@ -335,6 +335,7 @@
     background-color: #2980b9;
     color: white;
     transform: rotateY(180deg);
+    border-radius: 20px;
   }
 
 
