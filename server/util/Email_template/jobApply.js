@@ -114,7 +114,7 @@ exports.application = function (name, email) {
                 <body>
                     <div class="col-12 pt-3 pb-3 banner">
                         <div class="container text-white">
-                            <h2>Reset Your Password</h2>
+                            <h2>New Application</h2>
                         </div>
                     </div>
                     <div class="container mt-3 mb-5">
