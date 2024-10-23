@@ -33,6 +33,7 @@
 </head>
 
 <body>
+
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -40,40 +41,53 @@
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
-            <h1 class="m-0 text-primary d-flex align-items-center"><img style="width: 70px;" class="px-2" src="img/Untitled design.png" alt="">Globel Prime</h1>
+            <h1 id="site-title" class="m-0 text-primary" data-lang-en="Globel Green Groves"
+                data-lang-pl="Globel Green Groves" data-lang-de="Globel Green Groves">Globel Green Groves</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-lg-0">
-                <a href="index.html" class="nav-item nav-link active"><span class="text_hover  fw-bold">Home</span></a>
-                <a href="about.html" class="nav-item nav-link text_hover">About</a>
+                <a href="index.html" class="nav-item nav-link active"><span class="text_hover fw-bold" id="nav-home"
+                        data-lang-en="Home" data-lang-pl="Strona główna" data-lang-de="Startseite">Home</span></a>
+                <a href="about.html" class="nav-item nav-link text_hover" id="nav-about" data-lang-en="About"
+                    data-lang-pl="O nas" data-lang-de="Über uns">About</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle text_hover" data-bs-toggle="dropdown">Jobs</a>
+                    <a href="#" class="nav-link dropdown-toggle text_hover" id="nav-jobs" data-lang-en="Jobs"
+                        data-lang-pl="Praca" data-lang-de="Jobs" data-bs-toggle="dropdown">Jobs</a>
                     <div class="dropdown-menu rounded-0 m-0">
-                        <a href="job-list.html" class="dropdown-item">Job List</a>
-                        <a href="job-detail.html" class="dropdown-item">Job Category</a>
+                        <a href="job-list.html" class="dropdown-item" id="job-list" data-lang-en="Job List"
+                            data-lang-pl="Lista ofert pracy" data-lang-de="Stellenliste">Job List</a>
+                        <a href="job-detail.html" class="dropdown-item" id="job-category" data-lang-en="Job Category"
+                            data-lang-pl="Kategoria pracy" data-lang-de="Jobkategorie">Job Category</a>
                     </div>
                 </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle text_hover" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu rounded-0 m-0">
-                        <a href="category.html" class="dropdown-item">Green Groves</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link text_hover">Contact</a>
+                <a href="contact.html" class="nav-item nav-link text_hover" id="nav-contact" data-lang-en="Contact"
+                    data-lang-pl="Kontakt" data-lang-de="Kontakt">Contact</a>
             </div>
-            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i
-                    class="fa fa-arrow-right ms-3"></i></a>
+            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block" id="post-job-btn"
+                data-lang-en="Post A Job" data-lang-pl="Dodaj ofertę pracy" data-lang-de="Stellenanzeige aufgeben">Post
+                A Job<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
+        <!-- Language Switcher Start -->
+        <div class="dropdown language-switcher">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Language
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
+                <li><a class="dropdown-item" href="#" onclick="setLanguage('pl')">Polish</a></li>
+                <li><a class="dropdown-item" href="#" onclick="setLanguage('de')">German</a></li>
+            </ul>
+        </div>
+        <!-- Language Switcher End -->
     </nav>
     <!-- Navbar End -->
-
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -85,41 +99,27 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-7">
-                                    <h1 class="display-2 mb-5 animated slideInDown">Organic Food Is Good For Health</h1>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Products</a>
-                                    <a href="" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Services</a>
+                                    <h1 class="display-2 mb-5 animated slideInDown" id="carousel-title-1"
+                                        data-lang-en="Organic Food Is Good For Health"
+                                        data-lang-pl="Żywność ekologiczna jest dobra dla zdrowia"
+                                        data-lang-de="Bio-Lebensmittel sind gut für die Gesundheit">Organic Food Is Good
+                                        For Health</h1>
+                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5"
+                                        id="carousel-product-1" data-lang-en="Products" data-lang-pl="Produkty"
+                                        data-lang-de="Produkte">Products</a>
+                                    <a href="" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3"
+                                        id="carousel-service-1" data-lang-en="Services" data-lang-pl="Usługi"
+                                        data-lang-de="Dienstleistungen">Services</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-lg-7">
-                                    <h1 class="display-2 mb-5 animated slideInDown">Natural Food Is Always Healthy</h1>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Products</a>
-                                    <a href="" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Services</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Add more carousel items as needed -->
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
     <!-- Carousel End -->
-
 
     <!-- About Start -->
     <div class="container-xxl py-5">
@@ -127,27 +127,21 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <img class="img-fluid w-100" src="img/about.jpg">
+                        <img class="img-fluid w-100" src="img/about.jpg" alt="About Us">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-5 mb-4">Best Organic Fruits And Vegetables</h1>
-                    <p class="mb-4">By choosing organic fruits and vegetables, you're not only supporting sustainable
-                        farming practices but also investing in your own health and well-being. So, the next time you're
-                        at the grocery store, opt for organic produce and reap the benefits of nature's bounty.</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Reduced pesticide exposure, potential for higher
-                        nutrients.</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Supports sustainable farming practices.</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Contributes to a healthier lifestyle.
-
-
-
-
-
-
-
-                    </p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
+                    <h1 class="display-5 mb-4" id="about-title" data-lang-en="Best Organic Fruits And Vegetables"
+                        data-lang-pl="Najlepsze ekologiczne owoce i warzywa"
+                        data-lang-de="Beste Bio-Früchte und -Gemüse">Best Organic Fruits And Vegetables</h1>
+                    <p class="mb-4" id="about-desc"
+                        data-lang-en="By choosing organic fruits and vegetables, you're not only supporting sustainable farming practices but also investing in your own health and well-being."
+                        data-lang-pl="Wybierając ekologiczne owoce i warzywa, wspierasz zrównoważone praktyki rolnicze i inwestujesz we własne zdrowie."
+                        data-lang-de="Indem Sie sich für Bio-Obst und -Gemüse entscheiden, unterstützen Sie nicht nur nachhaltige landwirtschaftliche Praktiken, sondern investieren auch in Ihre eigene Gesundheit.">
+                        By choosing organic fruits and vegetables, you're not only supporting sustainable farming
+                        practices but also investing in your own health and well-being.</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="" id="about-readmore"
+                        data-lang-en="Read More" data-lang-pl="Czytaj więcej" data-lang-de="Weiterlesen">Read More</a>
                 </div>
             </div>
         </div>
@@ -160,38 +154,60 @@
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Our Features</h1>
-                <p>Implement stringent quality checks to guarantee all products adhere to the strictest organic
-                    regulations.</p>
+                <h1 class="display-5 mb-3" data-lang-en="Our Features" data-lang-pl="Nasze cechy"
+                    data-lang-de="Unsere Funktionen">Our Features</h1>
+                <p data-lang-en="Implement stringent quality checks to guarantee all products adhere to the strictest organic regulations."
+                    data-lang-pl="Wprowadzaj rygorystyczne kontrole jakości, aby zapewnić, że wszystkie produkty przestrzegają najsurowszych regulacji organicznych."
+                    data-lang-de="Führen Sie strenge Qualitätskontrollen durch, um sicherzustellen, dass alle Produkte den strengsten Bio-Vorschriften entsprechen.">
+                    Implement stringent quality checks to guarantee all products adhere to the strictest organic
+                    regulations.
+                </p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="img/icon-1.png" alt="">
-                        <h4 class="mb-3">Natural Process</h4>
-                        <p class="mb-4">Organic farming relies heavily on natural processes to cultivate healthy and
-                            sustainable crops. This includes techniques like crop rotation, composting, and biological
-                            pest control.</p>
+                        <h4 class="mb-3" data-lang-en="Natural Process" data-lang-pl="Naturalny proces"
+                            data-lang-de="Natürlicher Prozess">Natural Process</h4>
+                        <p class="mb-4"
+                            data-lang-en="Organic farming relies heavily on natural processes to cultivate healthy and sustainable crops. This includes techniques like crop rotation, composting, and biological pest control."
+                            data-lang-pl="Rolnictwo ekologiczne opiera się w dużej mierze na naturalnych procesach w celu uprawy zdrowych i zrównoważonych upraw. Obejmuje to takie techniki jak rotacja upraw, kompostowanie i biologiczna kontrola szkodników."
+                            data-lang-de="Der biologische Anbau stützt sich stark auf natürliche Prozesse, um gesunde und nachhaltige Pflanzen anzubauen. Dazu gehören Techniken wie Fruchtfolge, Kompostierung und biologische Schädlingsbekämpfung.">
+                            Organic farming relies heavily on natural processes to cultivate healthy and sustainable
+                            crops. This includes techniques like crop rotation, composting, and biological pest control.
+                        </p>
                         <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
-                        <h4 class="mb-3">Organic Products</h4>
-                        <p class="mb-4">Products certified as organic are produced using methods that adhere to strict
-                            standards, prohibiting the use of synthetic pesticides, fertilizers, and genetically
-                            modified organisms.</p>
+                        <h4 class="mb-3" data-lang-en="Organic Products" data-lang-pl="Produkty ekologiczne"
+                            data-lang-de="Biologische Produkte">Organic Products</h4>
+                        <p class="mb-4"
+                            data-lang-en="Products certified as organic are produced using methods that adhere to strict standards, prohibiting the use of synthetic pesticides, fertilizers, and genetically modified organisms."
+                            data-lang-pl="Produkty certyfikowane jako ekologiczne są produkowane z użyciem metod, które przestrzegają rygorystycznych standardów, zabraniających używania syntetycznych pestycydów, nawozów i organizmów zmodyfikowanych genetycznie."
+                            data-lang-de="Als biologisch zertifizierte Produkte gelten Erzeugnisse, die nach strengen Standards hergestellt werden, die den Einsatz von synthetischen Pestiziden, Düngemitteln und genetisch veränderten Organismen untersagen.">
+                            Products certified as organic are produced using methods that adhere to strict standards,
+                            prohibiting the use of synthetic pesticides, fertilizers, and genetically modified
+                            organisms.
+                        </p>
                         <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
-                        <h4 class="mb-3">Biologically Safe</h4>
-                        <p class="mb-4">Organic products are generally considered biologically safe due to the reduced
-                            use of harmful chemicals. They are often free from pesticide residues and other contaminants
-                            that may be found in conventionally produced foods.</p>
+                        <h4 class="mb-3" data-lang-en="Biologically Safe" data-lang-pl="Biologicznie bezpieczne"
+                            data-lang-de="Biologisch sicher">Biologically Safe</h4>
+                        <p class="mb-4"
+                            data-lang-en="Organic products are generally considered biologically safe due to the reduced use of harmful chemicals. They are often free from pesticide residues and other contaminants that may be found in conventionally produced foods."
+                            data-lang-pl="Produkty ekologiczne są ogólnie uważane za biologicznie bezpieczne dzięki zmniejszonemu użyciu szkodliwych chemikaliów. Często są wolne od pozostałości pestycydów i innych zanieczyszczeń, które mogą występować w konwencjonalnych produktach spożywczych."
+                            data-lang-de="Biologische Produkte gelten im Allgemeinen als biologisch sicher, da weniger schädliche Chemikalien verwendet werden. Sie sind oft frei von Pestizidrückständen und anderen Schadstoffen, die in konventionell produzierten Lebensmitteln vorkommen können.">
+                            Organic products are generally considered biologically safe due to the reduced use of
+                            harmful chemicals. They are often free from pesticide residues and other contaminants that
+                            may be found in conventionally produced foods.
+                        </p>
                         <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
                     </div>
                 </div>
@@ -435,356 +451,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div id="tab-2" class="tab-pane fade show p-0">
-                    <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-2.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-3.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-4.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-5.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-6.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-7.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-8.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div> -->
-                <!-- <div class="col-12 text-center">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
-                        </div> -->
+
             </div>
         </div>
-        <!-- <div id="tab-3" class="tab-pane fade show p-0">
-                    <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-2.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-3.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-4.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-5.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-6.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-7.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-8.jpg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div> -->
-        <!-- <div class="col-12 text-center">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
-                        </div> -->
-    </div>
-    </div>
     </div>
     </div>
     </div>
@@ -796,18 +465,25 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
-                    <h1 class="display-5 text-white mb-3">Visit Our Firm</h1>
-                    <p class="text-white mb-0"> Globel Green Groves è il tuo partner di fiduciaGlobel Green Groves per
-                        l'importazione e l'esportazione di alimenti biologici. Con anni di esperienza, offriamo una
-                        vasta gamma di prodotti biologici certificati, provenienti da coltivatori attenti alla
-                        sostenibilità.</p>
+                    <h1 class="display-5 text-white mb-3" data-lang-en="Visit Our Firm"
+                        data-lang-it="Visita la Nostra Azienda">Visit Our Firm</h1>
+                    <p class="text-white mb-0"
+                        data-lang-en="Globel Green Groves is your trusted partner for the import and export of organic foods. With years of experience, we offer a wide range of certified organic products from sustainability-minded growers."
+                        data-lang-it="Globel Green Groves è il tuo partner di fiducia per l'importazione e l'esportazione di alimenti biologici. Con anni di esperienza, offriamo una vasta gamma di prodotti biologici certificati, provenienti da coltivatori attenti alla sostenibilità.">
+                        Globel Green Groves è il tuo partner di fiducia per l'importazione e l'esportazione di alimenti
+                        biologici. Con anni di esperienza, offriamo una vasta gamma di prodotti biologici certificati,
+                        provenienti da coltivatori attenti alla sostenibilità.
+                    </p>
                 </div>
                 <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
-                    <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="">Visit Now</a>
+                    <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" data-lang-en="Visit Now"
+                        data-lang-it="Visita Ora" href="">Visit Now</a>
                 </div>
             </div>
         </div>
     </div>
+
+
     <!-- Firm Visit End -->
 
 
@@ -881,140 +557,239 @@
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Import & Export</h1>
-                <p>Ensure seamless data or product management with our standardized import and export tools, designed
-                    for compatibility and ease across multiple platforms..</p>
+                <h1 class="display-5 mb-3" data-lang-en="Import & Export" data-lang-pl="Import i Eksport"
+                    data-lang-de="Import und Export">
+                    Import & Export
+                </h1>
+                <p data-lang-en="Ensure seamless data or product management with our standardized import and export tools, designed for compatibility and ease across multiple platforms."
+                    data-lang-pl="Zapewnij płynne zarządzanie danymi lub produktami dzięki naszym znormalizowanym narzędziom do importu i eksportu, zaprojektowanym z myślą o zgodności i łatwości użycia na różnych platformach."
+                    data-lang-de="Stellen Sie eine nahtlose Daten- oder Produktverwaltung mit unseren standardisierten Import- und Exporttools sicher, die für Kompatibilität und Benutzerfreundlichkeit auf mehreren Plattformen konzipiert wurden.">
+                    Ensure seamless data or product management with our standardized import and export tools, designed
+                    for compatibility and ease across multiple platforms.
+                </p>
             </div>
             <div class="row g-4">
+                <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="img/import_img1.jpg" alt="">
-                    <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">Organic coffee powder is a ground coffee made from
-                            coffee beans grown and processed according to strict organic standards. This means that no
-                            synthetic fertilizers, pesticides, or other harmful chemicals are used during the
-                            cultivation and production process.</a>
-                        <!-- <div class="text-muted border-top pt-4"> -->
-                            <!-- <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small> -->
-                            <!-- <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small> -->
-                        <!-- </div> -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <img class="img-fluid" src="img/import_img2.jpg" alt="">
-                    <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">Green tea is made from unoxidized leaves of the
-                            Camellia sinensis plant. It has a fresh, grassy flavor and is known for its health benefits,
-                            including being rich in antioxidants. Organic tea is rich in antioxidants and other
-                            beneficial compounds.</a>
-                        <!-- <div class="text-muted border-top pt-4">
-                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <img class="img-fluid" src="img/import_img3.jpg" alt="">
-                    <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">Organic CTC black tea is produced using methods that
-                            minimize the use of synthetic pesticides, fertilizers, and other harmful chemicals. This can
-                            benefit both your health and the environment. CTC black tea has a strong, robust flavor.</a>
-                        <!-- <div class="text-muted border-top pt-4">
-                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <img class="img-fluid" src="img/import_img4.jpg" alt="">
-                    <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">Organic fish is a niche market that has been gaining
-                            traction in recent years due to increasing consumer awareness of sustainable and healthy
-                            food options. The demand for organic seafood has surged,</a>
-                        <!-- <div class="text-muted border-top pt-4">
-                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <img class="img-fluid" src="img/import_img5.jpg" alt="">
-                    <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">Frozen organic food has gained significant popularity
-                            in recent years due to its convenience, long shelf life, and perceived health benefits.
-                            Consumers are increasingly seeking organic options that align with their desire for
-                            healthier,</a>
-                        <!-- <div class="text-muted border-top pt-4">
-                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
-                        </div> -->
+                    <div class="card shadow-sm border-0">
+                        <img class="img-fluid" src="img/import_img1.jpg" alt="Organic Coffee Powder">
+                        <div class="card-body bg-light p-4">
+                            <h5 class="card-title mb-3" data-lang-en="Organic Coffee Powder"
+                                data-lang-pl="Ekologiczny proszek kawowy" data-lang-de="Bio-Kaffeepulver">
+                                Organic Coffee Powder
+                            </h5>
+                            <p class="card-text mb-4"
+                                data-lang-en="Organic coffee powder is made from beans grown without synthetic fertilizers or pesticides, ensuring a healthier product and a sustainable environment."
+                                data-lang-pl="Ekologiczny proszek kawowy jest wytwarzany z ziaren uprawianych bez syntetycznych nawozów i pestycydów, co zapewnia zdrowszy produkt i zrównoważone środowisko."
+                                data-lang-de="Bio-Kaffeepulver wird aus Bohnen hergestellt, die ohne synthetische Düngemittel oder Pestizide angebaut werden, was ein gesünderes Produkt und eine nachhaltige Umwelt gewährleistet.">
+                                Organic coffee powder is made from beans grown without synthetic fertilizers or
+                                pesticides, ensuring a healthier product and a sustainable environment.
+                            </p>
+                            <a class="btn btn-primary" data-lang-en="Learn More" data-lang-pl="Dowiedz się więcej"
+                                data-lang-de="Mehr erfahren">
+                                Learn More
+                            </a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card shadow-sm border-0">
+                        <img class="img-fluid" src="img/import_img2.jpg" alt="Green Tea">
+                        <div class="card-body bg-light p-4">
+                            <h5 class="card-title mb-3" data-lang-en="Green Tea" data-lang-pl="Herbata Zielona"
+                                data-lang-de="Grüner Tee">
+                                Green Tea
+                            </h5>
+                            <p class="card-text mb-4"
+                                data-lang-en="Green tea is rich in antioxidants and promotes health. Our organic green tea is cultivated sustainably, free of synthetic pesticides."
+                                data-lang-pl="Zielona herbata jest bogata w przeciwutleniacze i wspomaga zdrowie. Nasza ekologiczna herbata zielona jest uprawiana w sposób zrównoważony, bez syntetycznych pestycydów."
+                                data-lang-de="Grüner Tee ist reich an Antioxidantien und fördert die Gesundheit. Unser biologischer grüner Tee wird nachhaltig angebaut, frei von synthetischen Pestiziden.">
+                                Green tea is rich in antioxidants and promotes health. Our organic green tea is
+                                cultivated sustainably, free of synthetic pesticides.
+                            </p>
+                            <a class="btn btn-primary" data-lang-en="Learn More" data-lang-pl="Dowiedz się więcej"
+                                data-lang-de="Mehr erfahren">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="card shadow-sm border-0">
+                        <img class="img-fluid" src="img/import_img3.jpg" alt="Organic CTC Black Tea">
+                        <div class="card-body bg-light p-4">
+                            <h5 class="card-title mb-3" data-lang-en="Organic CTC Black Tea"
+                                data-lang-pl="Ekologiczna czarna herbata CTC" data-lang-de="Bio-CTC-Schwarzer Tee">
+                                Organic CTC Black Tea
+                            </h5>
+                            <p class="card-text mb-4"
+                                data-lang-en="Our CTC black tea has a robust flavor and is grown using organic methods to protect both the environment and your health."
+                                data-lang-pl="Nasza czarna herbata CTC ma mocny smak i jest uprawiana metodami ekologicznymi, aby chronić zarówno środowisko, jak i Twoje zdrowie."
+                                data-lang-de="Unser CTC-Schwarztee hat einen kräftigen Geschmack und wird nach ökologischen Methoden angebaut, um sowohl die Umwelt als auch Ihre Gesundheit zu schützen.">
+                                Our CTC black tea has a robust flavor and is grown using organic methods to protect both
+                                the environment and your health.
+                            </p>
+                            <a class="btn btn-primary" data-lang-en="Learn More" data-lang-pl="Dowiedz się więcej"
+                                data-lang-de="Mehr erfahren">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="card shadow-sm border-0">
+                        <img class="img-fluid" src="img/import_img4.jpg" alt="Organic Fish">
+                        <div class="card-body bg-light p-4">
+                            <h5 class="card-title mb-3" data-lang-en="Organic Fish" data-lang-pl="Ekologiczna Ryba"
+                                data-lang-de="Bio-Fisch">
+                                Organic Fish
+                            </h5>
+                            <p class="card-text mb-4"
+                                data-lang-en="Organic fish is becoming increasingly popular as consumers look for healthier and sustainable seafood options. Our fish is farmed using eco-friendly methods."
+                                data-lang-pl="Ekologiczna ryba staje się coraz bardziej popularna, ponieważ konsumenci szukają zdrowszych i zrównoważonych opcji owoców morza. Nasze ryby hodowane są w sposób przyjazny dla środowiska."
+                                data-lang-de="Bio-Fisch wird immer beliebter, da Verbraucher nach gesünderen und nachhaltigeren Meeresfrüchteoptionen suchen. Unser Fisch wird mit umweltfreundlichen Methoden gezüchtet.">
+                                Organic fish is becoming increasingly popular as consumers look for healthier and
+                                sustainable seafood options. Our fish is farmed using eco-friendly methods.
+                            </p>
+                            <a class="btn btn-primary" data-lang-en="Learn More" data-lang-pl="Dowiedz się więcej"
+                                data-lang-de="Mehr erfahren">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="card shadow-sm border-0">
+                        <img class="img-fluid" src="img/import_img5.jpg" alt="Frozen Organic Food">
+                        <div class="card-body bg-light p-4">
+                            <h5 class="card-title mb-3" data-lang-en="Frozen Organic Food"
+                                data-lang-pl="Mrożona żywność organiczna" data-lang-de="Gefrorene Bio-Lebensmittel">
+                                Frozen Organic Food
+                            </h5>
+                            <p class="card-text mb-4"
+                                data-lang-en="Frozen organic food offers convenience without compromising on quality. We source the best organic ingredients and preserve their freshness for long-term storage."
+                                data-lang-pl="Mrożona żywność organiczna oferuje wygodę bez kompromisów w zakresie jakości. Pozyskujemy najlepsze organiczne składniki i zachowujemy ich świeżość na długi czas."
+                                data-lang-de="Gefrorene Bio-Lebensmittel bieten Komfort, ohne die Qualität zu beeinträchtigen. Wir beziehen die besten Bio-Zutaten und bewahren ihre Frische für eine langfristige Lagerung.">
+                                Frozen organic food offers convenience without compromising on quality. We source the
+                                best organic ingredients and preserve their freshness for long-term storage.
+                            </p>
+                            <a class="btn btn-primary" data-lang-en="Learn More" data-lang-pl="Dowiedz się więcej"
+                                data-lang-de="Mehr erfahren">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Repeat the same structure for the remaining cards -->
             </div>
         </div>
     </div>
+
+    </div>
+
+
     <!-- Import End -->
 
 
+
     <!-- Footer Start -->
+
+
     <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h1 class="fw-bold text-primary mb-4">F<span class="text-secondary">oo</span>dy</h1>
-                    <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
-                        stet lorem sit clita</p>
+                    <h2 class="fw-bold text-primary mb-4">Globel<span class="text-secondary">Prime</span>Groves</h2>
+                    <p>Your Trusted Partner in Import and Export</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                                class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1"
+                            href="https://twitter.com/yourusername" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1"
+                            href="https://facebook.com/yourusername" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1"
+                            href="https://www.youtube.com/@AndresTheDesigner" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-0"
+                            href="https://instagram.com/yourusername" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
+
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Thirurkad (po)
+                        Pin : 679321
+                        Malappuram (District)
+                        Kerala (state)
+                        India
+                    </p>
+                    <p>
+                        <i class="fa fa-phone-alt me-3"></i>
+                        <a href="tel:+919846472003" class="text-light">+91 9846472003</a>
+                    </p>
+                    <p>
+                        <i class="fa fa-whatsapp me-3"></i>
+                        <a href="https://wa.me/919846472003" class="text-light">WhatsApp</a>
+                    </p>
+
+                    <p>
+                        <i class="fa fa-envelope me-3"></i>
+                        <a href="mailto:jkjack203@.com" class="text-light">Globalgreengroves@gmail.com</a>
+                    </p>
                 </div>
+
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link">About Us</a>
+                    <a class="btn btn-link">Contact Us</a>
+                    <a class="btn btn-link">Our Services</a>
+                    <a class="btn btn-link">Terms & Condition</a>
+                    <a class="btn btn-link">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-light mb-4">Stay Connected with Global Prime Groves</h4>
+                    <p>Subscribe to our newsletter for the latest updates, exclusive offers, and insights into
+                        sustainable living.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5 border border-light rounded"
+                            type="email" placeholder="Enter your email address">
                         <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            class="btn btn-primary py-2 px-4 position-absolute top-0 end-0 mt-2 me-2 rounded">Subscribe</button>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="container-fluid copyright">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                        &copy;  All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-
-                        Designed By <a href="https://freewebsitecreate.net">Free Website Create</a>
+                        Designed By |
+                        <a href="mailto:jkjack203@gmail.com">jkjack203@gmail.com</a>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Footer End -->
 
 
@@ -1022,10 +797,26 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
             class="bi bi-arrow-up"></i></a>
 
-
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to switch languages
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang-en]');
+            elements.forEach(element => {
+                const translation = element.getAttribute(`data-lang-${lang}`);
+                if (translation) {
+                    element.innerText = translation;
+                }
+            });
+        }
+
+        // Hide spinner once the page loads
+        window.onload = function () {
+            document.getElementById('spinner').style.display = 'none';
+        };
+    </script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
@@ -1034,5 +825,4 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
-
 </html>
